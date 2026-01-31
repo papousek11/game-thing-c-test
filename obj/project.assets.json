@@ -76,9 +76,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matou\\Documents\\GitHub\\game-thing-c-test\\kalkulacka_test.csproj",
-      "projectName": "kalkulacka_test",
-      "projectPath": "C:\\Users\\matou\\Documents\\GitHub\\game-thing-c-test\\kalkulacka_test.csproj",
+      "projectUniqueName": "C:\\Users\\matou\\Documents\\GitHub\\game-thing-c-test\\game.csproj",
+      "projectName": "game",
+      "projectPath": "C:\\Users\\matou\\Documents\\GitHub\\game-thing-c-test\\game.csproj",
       "packagesPath": "C:\\Users\\matou\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\matou\\Documents\\GitHub\\game-thing-c-test\\obj\\",
       "projectStyle": "PackageReference",

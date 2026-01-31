@@ -33,7 +33,7 @@ class Suguma
 
         
 
-
+        Raylib.InitWindow(400,400,"game");
         while (!Raylib.WindowShouldClose())
         {
 
