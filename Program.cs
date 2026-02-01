@@ -16,28 +16,14 @@ class Suguma
     //
     static void Main(string[] args)
     {
-       
+       GameIni start = new GameIni();
+       start.IniLoading();
 
 
-        Vector2 cameraVector = new Vector2(200,200);
-        //Vector2 tlacitko1_1 = new Vector2(10,350);
-      
-        int screenWidth = 400;
-        int screenHeight = 400;
-        Raylib.InitWindow(screenWidth,screenHeight,"game");
-
+        
         Vector2 mouse_position;
         Image test = Raylib.LoadImage("tile_000.png");
         Texture2D test_texture = Raylib.LoadTextureFromImage(test);
-        Camera2D camera = new Camera2D
-        {
-            Offset = new Vector2(screenWidth / 2f, screenHeight / 2f),
-            Target = cameraVector,
-            Rotation = 0f,
-            Zoom = 1f
-        };
-        
-
        
 
         
