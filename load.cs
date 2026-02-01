@@ -16,7 +16,7 @@ class GameIni
         Raylib.SetConfigFlags(ConfigFlags.ResizableWindow); 
         
         
-      
+        
 
         Raylib.InitWindow(screenWidth,screenHeight,"game");
 
@@ -34,5 +34,10 @@ class GameIni
 }
 class LoadFromMemory
 {
-    
+    public Image test = Raylib.LoadImage("tile_000.png");
+    public Texture2D test_texture; 
+    public void LoadTextures()
+    {
+        test_texture = Raylib.LoadTextureFromImage(test);
+    }
 }

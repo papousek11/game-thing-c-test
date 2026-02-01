@@ -18,12 +18,12 @@ class Suguma
     {
        GameIni start = new GameIni();
        start.IniLoading();
-
+       LoadFromMemory loadFromMemory = new LoadFromMemory();
+       loadFromMemory.LoadTextures();
 
         
         Vector2 mouse_position;
-        Image test = Raylib.LoadImage("tile_000.png");
-        Texture2D test_texture = Raylib.LoadTextureFromImage(test);
+
        
 
         
@@ -37,12 +37,20 @@ class Suguma
             //mezi = mouse_position.ToString();
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.DarkBlue);
-            Raylib.DrawTexturePro(test_texture, new Rectangle(0,0,test_texture.Width,test_texture.Height),
-            new Rectangle(100,100,test_texture.Width*1,test_texture.Height*1),new Vector2(test_texture.Width,test_texture.Height),0,Color.White );
-            Raylib.DrawTexturePro(test_texture, new Rectangle(0,0,test_texture.Width,test_texture.Height),
-            new Rectangle(118,109,test_texture.Width*1,test_texture.Height*1),new Vector2(test_texture.Width,test_texture.Height),0,Color.White );
-            Raylib.DrawTexturePro(test_texture, new Rectangle(0,0,test_texture.Width,test_texture.Height),
-            new Rectangle(136,118,test_texture.Width*1,test_texture.Height*1),new Vector2(test_texture.Width,test_texture.Height),0,Color.White );
+            Raylib.DrawTexturePro(loadFromMemory.test_texture, 
+            new Rectangle(0,0,loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),
+            new Rectangle(100,100,loadFromMemory.test_texture.Width*1,loadFromMemory.test_texture.Height*1),
+            new Vector2(loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),0,Color.White );
+
+            Raylib.DrawTexturePro(loadFromMemory.test_texture,
+            new Rectangle(0,0,loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),
+            new Rectangle(118,109,loadFromMemory.test_texture.Width*1,loadFromMemory.test_texture.Height*1),
+            new Vector2(loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),0,Color.White );
+
+            Raylib.DrawTexturePro(loadFromMemory.test_texture,
+            new Rectangle(0,0,loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),
+            new Rectangle(136,118,loadFromMemory.test_texture.Width*1,loadFromMemory.test_texture.Height*1),
+            new Vector2(loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),0,Color.White );
             //Raylib.DrawText("gfd",100,100,80,Color.White);
 
             
