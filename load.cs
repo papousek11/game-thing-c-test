@@ -7,9 +7,11 @@ namespace main;
 
 class GameIni
 {
-    public int screenWidth = 400;
-    public int screenHeight = 400;
-    public Vector2 cameraVector = new Vector2(200,200);
+    public int screenWidth = 1420;
+    public int screenHeight = 720;
+    public Vector2 cameraVector = new Vector2(0,0);
+    public Camera2D camera = new Camera2D();
+        
     public void IniLoading()
     {
 
@@ -19,16 +21,12 @@ class GameIni
         
 
         Raylib.InitWindow(screenWidth,screenHeight,"game");
-
+        camera.Offset = new Vector2(screenWidth / 2f, screenHeight / 2f);
+        camera.Target = new Vector2(0,0);
+        camera.Rotation = 0f;
+        camera.Zoom = 1f;
+        Raylib.SetTargetFPS(60); 
         
-        
-        Camera2D camera = new Camera2D
-        {
-            Offset = new Vector2(screenWidth / 2f, screenHeight / 2f),
-            Target = cameraVector,
-            Rotation = 0f,
-            Zoom = 1f
-        };
     }
 
 }
