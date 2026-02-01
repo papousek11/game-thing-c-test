@@ -7,7 +7,7 @@ namespace main;
 
 class GameIni
 {
-    public int screenWidth = 1420;
+    public int screenWidth = 1280;
     public int screenHeight = 720;
     public Vector2 cameraVector = new Vector2(0,0);
     public Camera2D camera = new Camera2D();
