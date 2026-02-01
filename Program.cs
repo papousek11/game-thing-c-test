@@ -19,21 +19,30 @@ class Suguma
        
 
 
-
+        Vector2 cameraVector = new Vector2(200,200);
         //Vector2 tlacitko1_1 = new Vector2(10,350);
       
-
-
+        int screenWidth = 400;
+        int screenHeight = 400;
+        Raylib.InitWindow(screenWidth,screenHeight,"game");
 
         Vector2 mouse_position;
-       
-
+        Image test = Raylib.LoadImage("tile_000.png");
+        Texture2D test_texture = Raylib.LoadTextureFromImage(test);
+        Camera2D camera = new Camera2D
+        {
+            Offset = new Vector2(screenWidth / 2f, screenHeight / 2f),
+            Target = cameraVector,
+            Rotation = 0f,
+            Zoom = 1f
+        };
+        
 
        
 
         
 
-        Raylib.InitWindow(400,400,"game");
+        
         while (!Raylib.WindowShouldClose())
         {
 
@@ -42,7 +51,13 @@ class Suguma
             //mezi = mouse_position.ToString();
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.DarkBlue);
-           
+            Raylib.DrawTexturePro(test_texture, new Rectangle(0,0,test_texture.Width,test_texture.Height),
+            new Rectangle(100,100,test_texture.Width*1,test_texture.Height*1),new Vector2(test_texture.Width,test_texture.Height),0,Color.White );
+            Raylib.DrawTexturePro(test_texture, new Rectangle(0,0,test_texture.Width,test_texture.Height),
+            new Rectangle(118,109,test_texture.Width*1,test_texture.Height*1),new Vector2(test_texture.Width,test_texture.Height),0,Color.White );
+            Raylib.DrawTexturePro(test_texture, new Rectangle(0,0,test_texture.Width,test_texture.Height),
+            new Rectangle(136,118,test_texture.Width*1,test_texture.Height*1),new Vector2(test_texture.Width,test_texture.Height),0,Color.White );
+            //Raylib.DrawText("gfd",100,100,80,Color.White);
 
             
             
