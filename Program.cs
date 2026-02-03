@@ -68,8 +68,11 @@ class Suguma
             //Raylib.IsMouseButtonPressed(MouseButton.Left)
            
         }
-
-        Raylib.CloseWindow();
+        if (Raylib.WindowShouldClose())
+        {
+            Raylib.CloseWindow();
+        }
+        
 
 
     }
