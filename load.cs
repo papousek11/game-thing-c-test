@@ -16,10 +16,6 @@ class GameIni
     {
 
         Raylib.SetConfigFlags(ConfigFlags.ResizableWindow); 
-        
-        
-        
-
         Raylib.InitWindow(screenWidth,screenHeight,"game");
         camera.Offset = new Vector2(screenWidth / 2f, screenHeight / 2f);
         camera.Target = new Vector2(0,0);
