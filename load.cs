@@ -39,3 +39,13 @@ class LoadFromMemory
         test_texture = Raylib.LoadTextureFromImage(test);
     }
 }
+class LoadingVisual
+{
+    
+
+
+    public void UpdateLoadBar()
+    {
+        
+    }
+}

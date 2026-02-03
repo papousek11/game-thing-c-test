@@ -10,7 +10,7 @@ namespace main;
 
 class Suguma
 {
-   
+   public int state;
 
     
     //
@@ -20,7 +20,10 @@ class Suguma
        start.IniLoading();
        LoadFromMemory loadFromMemory = new LoadFromMemory();
        loadFromMemory.LoadTextures();
-
+       Suguma MainVariables = new Suguma();
+       DeltaTime timeUpdate = new DeltaTime();
+       timeUpdate.GameTickUpdate();
+    
         
         Vector2 mouse_position;
 
@@ -29,21 +32,24 @@ class Suguma
         
 
         
-        while (!Raylib.WindowShouldClose())
+       /* while (!Raylib.WindowShouldClose())
         {
-            start.cameraVector.X = start.cameraVector.X + 0.1f;
-            start.cameraVector.Y = 200;
-            Console.WriteLine(start.cameraVector.X);
-            start.camera.Offset.X = Raylib.GetScreenWidth()/2f;
-            start.camera.Offset.Y = Raylib.GetScreenHeight()/2f;
+            
+            
+            
+            switch (MainVariables.state)
+            {   
+                //render main loading screen
+                case 1:
 
-            //start.camera.Target.X = Raylib.GetScreenCenter().X/2;
-            //start.camera.Target.Y = Raylib.GetScreenCenter().Y/2;
-            mouse_position = Raylib.GetMousePosition();
+                    break;
+            }
+            
+            /*mouse_position = Raylib.GetMousePosition();
             //mezi = mouse_position.ToString();
-            Raylib.BeginDrawing();
+            
             Raylib.BeginMode2D(start.camera);
-            Raylib.ClearBackground(Color.DarkBlue);
+            
             Raylib.DrawTexturePro(loadFromMemory.test_texture, 
             new Rectangle(0,0,loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),
             new Rectangle(0,0,loadFromMemory.test_texture.Width*1,loadFromMemory.test_texture.Height*1),
@@ -64,18 +70,30 @@ class Suguma
             
             
 
-            Raylib.EndDrawing();
+            
             //Raylib.IsMouseButtonPressed(MouseButton.Left)
            
+           
         }
-        if (Raylib.WindowShouldClose())
-        {
-            Raylib.CloseWindow();
-        }
+        */
+
+      
         
 
 
     }
-
+    public void Update(double DeltaTime)
+    {
+        if (!Raylib.WindowShouldClose())
+        {
+            Raylib.BeginDrawing();
+            Raylib.ClearBackground(Color.DarkBlue);
+            Raylib.EndDrawing();
+        }
+        else
+        {
+            Raylib.CloseWindow();
+        }
+    }
   
 }
