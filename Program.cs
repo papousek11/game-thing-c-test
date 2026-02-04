@@ -10,10 +10,16 @@ namespace main;
 
 class Suguma
 {
+   public int screenWidth = 1280;
+   public int screenHeight = 720;
    public int state;
    GameIni start = new GameIni();
    LoadFromMemory loadFromMemory = new LoadFromMemory();
+   bool holder = true;
     
+
+   
+
     //
     static void Main(string[] args)
     {
@@ -21,14 +27,18 @@ class Suguma
        //int screenHeight = 720;
 
         
-       
+
        
        GameIni start = new GameIni();
        DeltaTime timeUpdate = new DeltaTime();
        LoadFromMemory loadFromMemory = new LoadFromMemory();
+       
        start.IniLoading();
+       
        loadFromMemory.LoadTextures();
        timeUpdate.GameTickUpdate();
+       
+
       
         
        //Vector2 mouse_position;
@@ -70,7 +80,7 @@ class Suguma
             new Rectangle(0,0,loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),
             new Rectangle(36,18,loadFromMemory.test_texture.Width*1,loadFromMemory.test_texture.Height*1),
             new Vector2(loadFromMemory.test_texture.Width,loadFromMemory.test_texture.Height),0,Color.White );
-            //Raylib.DrawText("gfd",100,100,80,Color.White);
+            //
             
 
             
@@ -90,35 +100,41 @@ class Suguma
     }
     public void Update(double DeltaTime)
     {
-        if (!Raylib.WindowShouldClose())
-        {
+        
+        
+                
+                start.camera.Offset.X = Raylib.GetScreenWidth()/2;
+                start.camera.Offset.Y = Raylib.GetScreenHeight()/2;
+                Raylib.BeginDrawing();
 
-            Raylib.BeginMode2D(start.camera);
-            Raylib.BeginDrawing();
+
+                Raylib.ClearBackground(Color.DarkBlue);
+               
+
+                Raylib.BeginMode2D(start.camera);
             
-            start.camera.Offset.X = Raylib.GetScreenWidth()/2;
-            start.camera.Offset.Y = Raylib.GetScreenHeight()/2;
-
-
-
             
 
-            Raylib.ClearBackground(Color.DarkBlue);
-            Texture2D CurrentTexture = loadFromMemory.test_texture;
 
 
-            Raylib.DrawTexturePro(loadFromMemory.test_texture, 
-            new Rectangle(0,0,CurrentTexture.Width,CurrentTexture.Height),
-            new Rectangle(0,0,CurrentTexture.Width*10,CurrentTexture.Height*10),
-            new Vector2(CurrentTexture.Width,CurrentTexture.Height),0,Color.White );
 
-            Raylib.EndMode2D();
-            Raylib.EndDrawing();
-        }
-        else
-        {
-            Raylib.CloseWindow();
-        }
+                Raylib.DrawText("gfd",100,100,80,Color.White);
+
+            
+                Texture2D CurrentTexture = loadFromMemory.test_texture;
+
+                Raylib.DrawTexture(loadFromMemory.test_texture, 10, 10, Color.White);
+                Raylib.DrawTexturePro(CurrentTexture, 
+                new Rectangle(0,0,CurrentTexture.Width,CurrentTexture.Height),
+                new Rectangle(0,0,CurrentTexture.Width,CurrentTexture.Height),
+                new Vector2(CurrentTexture.Width/2,CurrentTexture.Height/2),0,Color.White );
+
+                Raylib.EndMode2D();
+                Raylib.EndDrawing();
+            
+            
+        
+       
     }
   
 }
