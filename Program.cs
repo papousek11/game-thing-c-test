@@ -105,20 +105,21 @@ class Suguma
                 
                 start.camera.Offset.X = Raylib.GetScreenWidth()/2;
                 start.camera.Offset.Y = Raylib.GetScreenHeight()/2;
+                Raylib.BeginMode2D(start.camera);
                 Raylib.BeginDrawing();
-
+                
 
                 Raylib.ClearBackground(Color.DarkBlue);
-               
+                
 
-                Raylib.BeginMode2D(start.camera);
+                //
             
             
 
 
 
 
-                Raylib.DrawText("gfd",100,100,80,Color.White);
+                Raylib.DrawText("gfd",0,0,200,Color.White);
 
             
                 Texture2D CurrentTexture = loadFromMemory.test_texture;
