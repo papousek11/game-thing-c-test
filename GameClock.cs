@@ -12,7 +12,7 @@ class DeltaTime
 
     Stopwatch tick = Stopwatch.StartNew();
     double lastTime;
-    Suguma MainMethod = new Suguma();
+    
 
     public DeltaTime()
     {
@@ -24,12 +24,12 @@ class DeltaTime
 
     public void GameTickUpdate()
     {
-        while (!Raylib.WindowShouldClose())
+        while (true)
         {
             double TimeRN = tick.Elapsed.TotalSeconds;
             double DeltaTime = TimeRN - lastTime;
             lastTime = TimeRN;
-            MainMethod.Update(DeltaTime);
+            //MainMethod.Update(DeltaTime);
         }
     }
 }

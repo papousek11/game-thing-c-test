@@ -18,13 +18,50 @@ class Suguma
    bool holder = true;
     
 
-   
-
-    //
     static void Main(string[] args)
     {
-       int screenWidth = 1280;
-       int screenHeight = 720;
+        int screenWidth = 1280;
+        int screenHeight = 720;
+
+        Camera2D camera = new Camera2D();
+        camera.Offset = new Vector2(screenWidth / 2f, screenHeight / 2f);
+        camera.Target = new Vector2(0,0);
+        camera.Rotation = 0f;
+        camera.Zoom = 1f;
+
+
+        Raylib.SetConfigFlags(ConfigFlags.ResizableWindow); 
+        Raylib.InitWindow(screenWidth,screenHeight,"game");
+        Raylib.SetTargetFPS(60);
+
+        Image test = Raylib.LoadImage("tile_000.png");
+        Texture2D CurrentTexture = Raylib.LoadTextureFromImage(test);
+
+
+        while (!Raylib.WindowShouldClose())
+        {
+            camera.Offset.X = Raylib.GetScreenWidth()/2;
+            camera.Offset.Y = Raylib.GetScreenHeight()/2;
+
+            
+            Raylib.BeginDrawing();
+            Raylib.BeginMode2D(camera);
+            Raylib.ClearBackground(Color.DarkBlue);
+
+            //Raylib.DrawText("gfd",0,0,200,Color.White);
+            Raylib.DrawTexture(CurrentTexture, 0, 0, Color.White);
+
+
+            Raylib.EndMode2D();
+            Raylib.EndDrawing();
+            
+        }
+        Raylib.CloseWindow();
+
+
+
+       /*
+       
 
         
 
@@ -32,20 +69,17 @@ class Suguma
        GameIni start = new GameIni();
        DeltaTime timeUpdate = new DeltaTime();
        LoadFromMemory loadFromMemory = new LoadFromMemory();
-       Raylib.SetConfigFlags(ConfigFlags.ResizableWindow); 
-        Raylib.InitWindow(screenWidth,screenHeight,"game");
+       
+        
        start.IniLoading();
        
        
        timeUpdate.GameTickUpdate();
         
-        Camera2D camera = new Camera2D();
         
-        camera.Offset = new Vector2(screenWidth / 2f, screenHeight / 2f);
-        camera.Target = new Vector2(0,0);
-        camera.Rotation = 0f;
-        camera.Zoom = 1f;
-        Raylib.SetTargetFPS(60);
+        
+        
+        
         loadFromMemory.LoadTextures();
       
         
@@ -55,16 +89,15 @@ class Suguma
 
         
 
-        Texture2D CurrentTexture = loadFromMemory.test_texture;
-        while (!Raylib.WindowShouldClose())
+        
+        while ()
         {
-                camera.Offset.X = Raylib.GetScreenWidth()/2;
-                camera.Offset.Y = Raylib.GetScreenHeight()/2;
                 
-                Raylib.BeginDrawing();
-                Raylib.BeginMode2D(camera);
+                
+                
+                //
 
-                Raylib.ClearBackground(Color.DarkBlue);
+                
                 
 
                 
@@ -74,18 +107,18 @@ class Suguma
 
 
 
-                Raylib.DrawText("gfd",640,360,200,Color.White);
+                
 
             
                 
 
-                Raylib.DrawTexture(loadFromMemory.test_texture, 100, 100, Color.White);
+                //
                 /*Raylib.DrawTexturePro(CurrentTexture, 
                 new Rectangle(0,0,CurrentTexture.Width,CurrentTexture.Height),
                 new Rectangle(0,0,CurrentTexture.Width,CurrentTexture.Height),
-                new Vector2(CurrentTexture.Width/2,CurrentTexture.Height/2),0,Color.White );*/
+                new Vector2(CurrentTexture.Width/2,CurrentTexture.Height/2),0,Color.White );
 
-                Raylib.EndMode2D();
+                //
                 Raylib.EndDrawing();
                 
             
@@ -95,14 +128,14 @@ class Suguma
            
            
         }
-        Raylib.CloseWindow();
+        Raylib.CloseWindow();*/
 
       
         
 
 
     }
-    public void Update(double DeltaTime)
+    /*public void Update(double DeltaTime)
     {
         
         
@@ -111,6 +144,6 @@ class Suguma
             
         
        
-    }
+    }*/
   
 }
