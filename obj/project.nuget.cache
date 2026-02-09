@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "T8C50VyeC6k=",
+  "dgSpecHash": "SfilTKPzlnc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\matou\\Documents\\GitHub\\game-thing-c-test\\game.csproj",
+  "projectFilePath": "/home/apates/Documents/GitHub/game-thing-c-test/game.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\matou\\.nuget\\packages\\raylib-cs\\7.0.2\\raylib-cs.7.0.2.nupkg.sha512"
+    "/home/apates/.nuget/packages/raylib-cs/7.0.2/raylib-cs.7.0.2.nupkg.sha512"
   ],
   "logs": []
 }
